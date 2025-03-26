@@ -6,10 +6,7 @@ O — Open/Closed Principle (OCP) — Принцип открытости/зак
 
 
 
-# Без OCP
-"""
-Логика по разным задачам нашего рта находится в одном классе Mouth.
-"""
+# Без OCP:
 class Mouth:     
     def work_mouth(self, task):         
         if task == "speak":             
@@ -19,12 +16,12 @@ class Mouth:
         elif task == "сlosed":             
             print("~Закрыт~")
 
+"""
+Логика по разным задачам нашего рта находится в одном классе Mouth.
+"""
 
-# С OCP
-"""
-Work_mouth является интерфейсом (Который по дефолту - закрывает рот). 
-Этот интерфейс реализуют классы для каждой из задач рта: Speak_Work_mouth, Eat_Work_mouth и Closed_Work_mouth.
-"""
+
+# С OCP:
 class Work_mouth:     
     def work_mouth(self):         
         print("~Закрыт~")
@@ -40,3 +37,8 @@ class Eat_Work_mouth(Work_mouth):
 class Closed_Work_mouth(Work_mouth):     
     def work_mouth(self):         
         print("~Закрыт~")
+
+"""
+Work_mouth является интерфейсом (Который по дефолту - закрывает рот). 
+Этот интерфейс реализуют классы для каждой из задач рта: Speak_Work_mouth, Eat_Work_mouth и Closed_Work_mouth.
+"""
